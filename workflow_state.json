@@ -1,0 +1,15 @@
+{
+  "agent_ids": {
+    "manager_agent": "69ebb0ca089f95578c0d0e8b",
+    "structure_agent": "69ebb0b036c06077be12999a",
+    "intelligence_agent": "69ebb0b0090d64519e64a83b",
+    "techdebt_agent": "69ebb0b185bc782410824660"
+  },
+  "primary_agent_id": "69ebb0ca089f95578c0d0e8b",
+  "response_schemas": {
+    "structure_analyzer": "response_schemas/structure_analyzer_response.json",
+    "code_intelligence_agent": "response_schemas/code_intelligence_agent_response.json",
+    "tech_debt_scanner": "response_schemas/tech_debt_scanner_response.json",
+    "code_lens_coordinator": "response_schemas/code_lens_coordinator_response.json"
+  }
+}

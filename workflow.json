@@ -1,0 +1,70 @@
+{
+  "workflow": {
+    "nodes": [
+      {"id": "input_node", "type": "Input", "label": "Code Input", "nodeCategory": "input"},
+      {"id": "manager_agent", "type": "Agent", "label": "Code Lens Coordinator", "nodeCategory": "agent"},
+      {"id": "structure_agent", "type": "Agent", "label": "Structure Analyzer", "nodeCategory": "agent"},
+      {"id": "intelligence_agent", "type": "Agent", "label": "Code Intelligence Agent", "nodeCategory": "agent"},
+      {"id": "techdebt_agent", "type": "Agent", "label": "Tech Debt Scanner", "nodeCategory": "agent"},
+      {"id": "output_node", "type": "Output", "label": "Analysis Report", "nodeCategory": "end"}
+    ],
+    "edges": [
+      {"source": "input_node", "target": "manager_agent"},
+      {"source": "manager_agent", "target": "structure_agent"},
+      {"source": "manager_agent", "target": "intelligence_agent"},
+      {"source": "manager_agent", "target": "techdebt_agent"},
+      {"source": "manager_agent", "target": "output_node"}
+    ]
+  },
+  "agents": [
+    {
+      "node_id": "manager_agent",
+      "agent_id": "69ebb0ca089f95578c0d0e8b",
+      "name": "Code Lens Coordinator",
+      "description": "Code analysis coordinator that synthesizes structure analysis, code intelligence, and tech debt scanning into a unified codebase analysis report",
+      "provider_id": "openai",
+      "model": "gpt-4.1",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "role": "manager",
+      "managed_agents": [
+        {"id": "69ebb0b036c06077be12999a", "name": "Structure Analyzer"},
+        {"id": "69ebb0b0090d64519e64a83b", "name": "Code Intelligence Agent"},
+        {"id": "69ebb0b185bc782410824660", "name": "Tech Debt Scanner"}
+      ]
+    },
+    {
+      "node_id": "structure_agent",
+      "agent_id": "69ebb0b036c06077be12999a",
+      "name": "Structure Analyzer",
+      "description": "Codebase structure and architecture analyst that extracts project organization, architecture patterns, and module relationships",
+      "provider_id": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "role": "sub-agent"
+    },
+    {
+      "node_id": "intelligence_agent",
+      "agent_id": "69ebb0b0090d64519e64a83b",
+      "name": "Code Intelligence Agent",
+      "description": "Functions, classes, and code entity extractor that catalogs all code entities with signatures and relationships",
+      "provider_id": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "role": "sub-agent"
+    },
+    {
+      "node_id": "techdebt_agent",
+      "agent_id": "69ebb0b185bc782410824660",
+      "name": "Tech Debt Scanner",
+      "description": "Technical debt and dependency analyzer that detects TODOs, code smells, deprecated patterns, and dependency issues",
+      "provider_id": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "role": "sub-agent"
+    }
+  ]
+}

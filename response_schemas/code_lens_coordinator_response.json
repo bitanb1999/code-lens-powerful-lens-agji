@@ -1,0 +1,166 @@
+{
+  "agent_name": "Code Lens Coordinator",
+  "agent_id": "69ebb0ca089f95578c0d0e8b",
+  "description": "Code analysis coordinator that synthesizes structure analysis, code intelligence, and tech debt scanning into a unified codebase analysis report",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "health_score": "number",
+    "project_name": "string",
+    "languages": [
+      "string"
+    ],
+    "architecture": "string",
+    "key_insights": [
+      "string"
+    ],
+    "structure": {
+      "modules": [
+        {
+          "name": "string",
+          "purpose": "string",
+          "file_count": "number"
+        }
+      ],
+      "entry_points": [
+        "string"
+      ],
+      "conventions": [
+        "string"
+      ]
+    },
+    "code_entities": {
+      "total_functions": "number",
+      "total_classes": "number",
+      "functions": [
+        {
+          "name": "string",
+          "params": "string",
+          "return_type": "string",
+          "description": "string",
+          "module": "string"
+        }
+      ],
+      "classes": [
+        {
+          "name": "string",
+          "methods_count": "number",
+          "description": "string",
+          "module": "string"
+        }
+      ],
+      "design_patterns": [
+        "string"
+      ]
+    },
+    "tech_debt": {
+      "level": "string",
+      "score": "number",
+      "todos_count": "number",
+      "code_smells_count": "number",
+      "top_issues": [
+        {
+          "issue": "string",
+          "severity": "string",
+          "location": "string"
+        }
+      ],
+      "remediation": [
+        {
+          "action": "string",
+          "priority": "string",
+          "effort": "string"
+        }
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "string",
+        "status": "string",
+        "note": "string"
+      }
+    ],
+    "llm_context": "string",
+    "executive_summary": "string"
+  },
+  "example_response": {
+    "health_score": 0,
+    "project_name": "sample string",
+    "languages": [
+      "sample string"
+    ],
+    "architecture": "sample string",
+    "key_insights": [
+      "sample string"
+    ],
+    "structure": {
+      "modules": [
+        {
+          "name": "sample string",
+          "purpose": "sample string",
+          "file_count": 0
+        }
+      ],
+      "entry_points": [
+        "sample string"
+      ],
+      "conventions": [
+        "sample string"
+      ]
+    },
+    "code_entities": {
+      "total_functions": 0,
+      "total_classes": 0,
+      "functions": [
+        {
+          "name": "sample string",
+          "params": "sample string",
+          "return_type": "sample string",
+          "description": "sample string",
+          "module": "sample string"
+        }
+      ],
+      "classes": [
+        {
+          "name": "sample string",
+          "methods_count": 0,
+          "description": "sample string",
+          "module": "sample string"
+        }
+      ],
+      "design_patterns": [
+        "sample string"
+      ]
+    },
+    "tech_debt": {
+      "level": "sample string",
+      "score": 0,
+      "todos_count": 0,
+      "code_smells_count": 0,
+      "top_issues": [
+        {
+          "issue": "sample string",
+          "severity": "sample string",
+          "location": "sample string"
+        }
+      ],
+      "remediation": [
+        {
+          "action": "sample string",
+          "priority": "sample string",
+          "effort": "sample string"
+        }
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "sample string",
+        "status": "sample string",
+        "note": "sample string"
+      }
+    ],
+    "llm_context": "sample string",
+    "executive_summary": "sample string"
+  }
+}
